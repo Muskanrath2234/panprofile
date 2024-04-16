@@ -1,0 +1,33 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content%}
+    <h1>PAN Information</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th>PAN</th>
+                <th>Father's Name</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for profile in profiles %}
+            <tr>
+                <td>{{ profile.name }}</td>
+                <td>{{ profile.DOB }}</td>
+                <td>{{ profile.Pan }}</td>
+                <td>{{ profile.father_Name }}</td>
+                <!-- Add more columns as needed -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
